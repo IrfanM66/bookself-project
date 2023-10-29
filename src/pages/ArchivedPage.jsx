@@ -47,18 +47,25 @@ function HomePage() {
     return note.title.toLowerCase().includes(keyword.toLowerCase());
   });
   return (
-    <section>
+    <section className="archived-note">
       {console.log("loading data")}
       <SearchBar keyword={keyword} keywordChange={onKeywordChangeHandler} />
-      <h2>{localeContext === "id" ? "Daftar Catatan Arsip" : "Archived Notes List"}</h2>
+      <h2>
+        {localeContext === "id"
+          ? "Daftar Catatan Arsip"
+          : "Archived Notes List"}
+      </h2>
+      <p className="addnote-Desc">
+        Arsip catatan yang telah anda lakukan
+      </p>
       {loading === true ? (
         <CardList
-        notes={filteredNotes}
-        onUnArchived={ononUnArchivedHandler}
-        onDelete={onDeleteHandler}
-      />
+          notes={filteredNotes}
+          onUnArchived={ononUnArchivedHandler}
+          onDelete={onDeleteHandler}
+        />
       ) : (
-        <h3 style={{textAlign : 'center'}}>Loading Data</h3>
+        <h3 style={{ textAlign: "center" }}>Loading Data</h3>
       )}
     </section>
   );
