@@ -1,6 +1,6 @@
 :root {
   --font-color: #111827;
-  --background-color: #fff;
+  --background-color: #red;
 }
 
 [data-theme="dark"] {
