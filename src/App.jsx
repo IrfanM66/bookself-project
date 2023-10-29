@@ -9,6 +9,7 @@ import HomePageWrapper from "./pages/HomePage";
 import DetailNotePage from "./pages/DetailNotePage";
 import Header from "./component/Header";
 import AddPage from "./pages/AddNotePage";
+import Chatbot from "./component/Chatbot";
 import ArchivedPageWrapper from "./pages/ArchivedPage";
 import Page404 from "./pages/404";
 import Footer from "./component/Footer";
@@ -107,6 +108,7 @@ function App() {
             <Route path="/note/:id" element={<DetailNotePage />} />
             <Route path="/archived" element={<ArchivedPageWrapper />} />
             <Route path="/*" element={<Page404 />} />
+            <Route path="/chatbot" element={<Chatbot />} />
           </Routes>
         </main>
         <Footer

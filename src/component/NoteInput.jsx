@@ -1,6 +1,7 @@
 import React from 'react';
 import useInput from "./useInput";
 import PropTypes from 'prop-types';
+
 function NoteInput({onAddNote}) {
     const [title, handleTitleChange] = useInput('');
     const [body, handleNoteChange] = useInput('');
