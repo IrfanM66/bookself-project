@@ -74,7 +74,7 @@ function App() {
     return (
       <ThemeContext.Provider value={themecontextValue}>
         <LocaleContext.Provider value={LocaleContextValue}>
-          <header className="contact-app__header">
+          <header className="contact-app_header">
             <Header />
           </header>
           <main>

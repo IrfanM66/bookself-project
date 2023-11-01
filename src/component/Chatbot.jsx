@@ -35,18 +35,11 @@ function Chatbot() {
     const newMessages = [...messages, newMessage];
 
     setMessages(newMessages);
-
-    // Initial system message to determine ChatGPT functionality
-    // How it responds, how it talks, etc.
     setIsTyping(true);
     await processMessageToChatGPT(newMessages);
   };
 
   async function processMessageToChatGPT(chatMessages) {
-    // messages is an array of messages
-    // Format messages for chatGPT API
-    // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
-    // So we need to reformat
 
     let apiMessages = chatMessages.map((messageObject) => {
       let role = "";
@@ -58,9 +51,6 @@ function Chatbot() {
       return { role: role, content: messageObject.message };
     });
 
-    // Get the request body set up with the model we plan to use
-    // and the messages which we formatted above. We add a system message in the front to'
-    // determine how we want chatGPT to act.
     const apiRequestBody = {
       model: "gpt-3.5-turbo",
       messages: [
@@ -95,24 +85,28 @@ function Chatbot() {
 
   return (
     <div className="chatbot-container">
-        <MainContainer>
-          <ChatContainer>
-            <MessageList
-              scrollBehavior="smooth"
-              typingIndicator={
-                isTyping ? (
-                  <TypingIndicator content="Chatbot is typing" />
-                ) : null
-              }
-            >
-              {messages.map((message, i) => {
-                console.log(message);
-                return <Message key={i} model={message} />;
-              })}
-            </MessageList>
-            <MessageInput placeholder="Type message here" onSend={handleSend} />
-          </ChatContainer>
-        </MainContainer>
+      <MainContainer>
+        <ChatContainer>
+          <MessageList
+            className="chatbot"
+            scrollBehavior="smooth"
+            typingIndicator={
+              isTyping ? (
+                <TypingIndicator
+                  className="chatbot-typing"
+                  content="Chatbot is typing"
+                />
+              ) : null
+            }
+          >
+            {messages.map((message, i) => {
+              console.log(message);
+              return <Message key={i} model={message} />;
+            })}
+          </MessageList>
+          <MessageInput  placeholder="Type message here" onSend={handleSend} />
+        </ChatContainer>
+      </MainContainer>
     </div>
   );
 }
