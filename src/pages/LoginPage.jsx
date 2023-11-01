@@ -1,20 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import LoginNew from '../component/LoginNew';
-import LocaleContext from '../context/LocaleContext';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import LoginNew from "../component/LoginNew";
+import LocaleContext from "../context/LocaleContext";
 
-function LoginPage({ loginSuccess }) { 
-  const {toggleLocaleContext} = React.useContext(LocaleContext);
+function LoginPage({ loginSuccess }) {
+  const { toggleLocaleContext } = React.useContext(LocaleContext);
   return (
     <section className="login-page">
-      <div className='container-login'>
-        {console.log("loading data login")}
-        <h2>
-          {toggleLocaleContext === "id"
-            ? "Silakan Masuk Untuk Melanjutkan"
-            : "LOGIN"}
-        </h2>
+      <div className="container-login">
+        <h2>LOGIN</h2>
         <p style={{ color: "red", textAlign: "center", paddingTop: "10px" }}>
           {toggleLocaleContext === "id"
             ? "Harap gunakan perangkat desktop karena website tidak responsive"
@@ -35,9 +30,9 @@ function LoginPage({ loginSuccess }) {
     </section>
   );
 }
- 
+
 LoginPage.propTypes = {
   loginSuccess: PropTypes.func,
-}
- 
+};
+
 export default LoginPage;

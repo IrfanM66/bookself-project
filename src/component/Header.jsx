@@ -14,11 +14,7 @@ function Header({ logout, name }) {
     return (
       <nav>
         <ul>
-          <li>
-            <Link className="nav-logo" to="/">
-              {localeContext === "id" ? "Aplikasi Catatan" : "Notes App"}
-            </Link>
-          </li>
+          <h2>Bookshelf</h2>
           <div className="right">
             <li>
               <button onClick={toggleThemeContext}>
@@ -58,7 +54,7 @@ function Header({ logout, name }) {
           </li>
           <li>
             <Link className="navbar-chatbot" to="/chatbot">
-              {localeContext === "id" ? "ChatBot" : "Chatbot"}
+              {localeContext === "id" ? "Bot Obrolan" : "ChatBot"}
             </Link>
           </li>
         </div>
