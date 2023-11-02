@@ -8,7 +8,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "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";
+const API_KEY = "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";
 const systemMessage = {
   role: "system",
   content:
