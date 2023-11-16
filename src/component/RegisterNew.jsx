@@ -2,6 +2,7 @@ import React from 'react';
 import useInput from "./useInput";
 import { register } from '../utils/network';
 import { useNavigate } from 'react-router-dom';
+
 function RegisterNew() {
     const navigate = useNavigate();
     const [name, handleNameChange] = useInput('');

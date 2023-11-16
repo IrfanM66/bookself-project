@@ -28,7 +28,7 @@ function HomePage() {
     const result = archived_notes.filter(e => e.id !== id)
     setNotes(result);
   }
-  async function ononUnArchivedHandler(id) {
+  async function onUnArchivedHandler(id) {
     await unarchiveNote(id);
     // const { data } = await getArchivedNotes();
     const result = archived_notes.filter(e => {

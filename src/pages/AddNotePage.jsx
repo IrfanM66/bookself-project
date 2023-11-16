@@ -13,7 +13,6 @@ function AddPage() {
   }
   return (
     <div className="add-note">
-      {console.log("loading data addnote")}
       <h2>{locale === "id" ? "Tambah Catatan" : "Add Note"}</h2>
       <p className="addnote-Desc">
         Masukkan dan simpan catatan harianmu pada Bookself, untuk mengingat
