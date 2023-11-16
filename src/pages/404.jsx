@@ -5,7 +5,7 @@ function Page404() {
     <div className='not-found'>
       <div>
           <h1>404 Page Not Found!</h1>
-          <p>Url yang anda kunjungi tidak tersedia.</p>
+          <p>Halaman yang anda kunjungi tidak tersedia.</p>
       </div>
     </div>
   )
